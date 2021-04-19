@@ -1,0 +1,12 @@
+{
+    "name": "huid/weekly-report-toolkit",
+    "description": "",
+    "require": {
+        "cpliakas/git-wrapper": "^2.0"
+    },
+    "autoload": {
+        "files": [
+            "src\\helpers.php"
+        ]
+    }
+}
