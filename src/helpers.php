@@ -133,7 +133,7 @@ LINE;
 
     $error = function ($txt) {
         return <<<LINE
-{$txt} \033[0;31m {$txt} \033[0;31m
+\033[0;31m ERROR:\033[0m {$txt}
 LINE;
     };
 
@@ -145,7 +145,7 @@ LINE;
 function getProjects($path) {
     // 获取所有的项目
     if (!is_dir($path)) {
-        toast("ERROR: your path error($path) no exist", 'error', true);
+        toast("your path error($path) no exist", 'error', true);
     }
 
     $paths = scandir($path);

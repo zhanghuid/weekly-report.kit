@@ -50,7 +50,7 @@ if (count($argv) < 4) {
 $projects = getProjects($argv[1]);
 
 if (!$projects) {
-    toast("ERROR: your path {$argv[1]} no exist git projects", 'error', true);
+    toast("your path {$argv[1]} no exist git projects", 'error', true);
 }
 
 // 开始时间 ~ 结束时间
@@ -164,3 +164,6 @@ if (!is_dir("./posts")) {
 }
 
 file_put_contents("./posts/week-{$argv[2]}-{$argv[3]}.md", trim($content, PHP_EOL));
+
+echo PHP_EOL;
+toast("COUNT: " . count($projects));
