@@ -20,6 +20,8 @@ php weekly
 
 ```
 
+> 默认生成的周报存到 `./posts` 路径下
+
 ### 灵感来自于
 > wi1dcard/weekly-report [GitHub](https://github.com/wi1dcard/weekly-report) / [Gitee](https://gitee.com/wi1dcard/weekly-report).
 
