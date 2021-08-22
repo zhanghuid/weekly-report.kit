@@ -8,7 +8,7 @@ __      _____  ___| | _| |_   _       _ __ ___ _ __   ___  _ __| |_
 
 An Weekly report generate for PHP
 
-Version: 0.0.1
+Version: 0.0.2
     
 
 ```
