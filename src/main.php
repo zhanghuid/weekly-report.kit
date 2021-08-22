@@ -13,16 +13,19 @@ $author = $config['author'];
  */
 $help = function () {
     $string =  <<<HELP
-    \033[36m Usage \033[0m:
-        php week project-path since until
+    \033[36m Usage\033[0m:
+        php weekly project-path since until
 
-    \033[36m Example \033[0m:
-        php week ~/web/ 20210401 20210407
-
-    \033[36m Params mean \033[0m:
+    \033[36m Parameter\033[0m:
         \033[33m project-path \033[0m: 项目地址的上级目录
         \033[33m since \033[0m: 开始时间
         \033[33m until \033[0m: 结束时间
+
+    \033[36m Example\033[0m:
+        php week ~/web/ 20210401 20210407
+
+    \033[36m Options\033[0m:
+        \033[33m --this-week \033[0m: 简化输入当前周（工作日）的开始时间跟结束时间
 
                    _    _                                       _   
 __      _____  ___| | _| |_   _       _ __ ___ _ __   ___  _ __| |_ 
@@ -33,7 +36,7 @@ __      _____  ___| | _| |_   _       _ __ ___ _ __   ___  _ __| |_
 
 An Weekly report generate for PHP
 
-Version: 0.0.1
+Version: 0.0.2
     \n
 HELP;
 
@@ -43,8 +46,20 @@ HELP;
 /**
  * 获取参数
  */
-if (count($argv) < 4) {
-    $help();
+$argvCount = count($argv);
+switch ($argvCount) {
+    case 3:
+        if (strpos($argv[2], '--') === false) {
+            $help();
+        }
+
+        formatArgs($argv[2], $argv);
+    break;
+    case 4:
+        toast("参数正常");
+    break;
+    default:
+        $help();
 }
 
 $projects = getProjects($argv[1]);

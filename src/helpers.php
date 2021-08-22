@@ -171,3 +171,20 @@ function getProjects($path) {
     return $tmp;
 }
 
+function formatArgs($option, &$args) {
+
+    $flag = str_replace('--', '', $option);
+
+    switch ($flag) {
+        case 'this-week':
+            $start = date('Ymd', strtotime('monday this week'));
+            $end = date('Ymd', strtotime('friday this week'));
+            $args[2] = $start;
+            $args[3] = $end;
+            break;
+        default:
+            toast("暂不支持的 --{$flag}", 'error', true);
+            break;
+    }
+}
+
