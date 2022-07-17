@@ -181,4 +181,4 @@ if (!is_dir("./posts")) {
 file_put_contents("./posts/week-{$argv[2]}-{$argv[3]}.md", trim($content, PHP_EOL));
 
 echo PHP_EOL;
-toast("COUNT: " . count($projects));
+toast("DATE: {$since}~{$until} \nCOUNT: " . count($projects));
